@@ -1,0 +1,7 @@
+{
+  "*.ts(x)?": [
+    "eslint --fix",
+    "yarn lint",
+    "yarn tsc"
+  ]
+}

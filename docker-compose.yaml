@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nome-do-projeto_dev:
+    build: .
+    entrypoint: ./.docker/entrypoint.sh
+    container_name: nome-do-projeto_dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
