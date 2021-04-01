@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "prepare": "chmod +x .docker/entrypoint.sh && yarn",
     "container": "docker-compose up",
-    "lint": "eslint --ext .tsx,.ts, src"
+    "lint": "eslint --ext .tsx,.ts, src --max-warnings=0"
   },
   "browserslist": {
     "production": [
