@@ -1,6 +1,8 @@
 import { AxiosError } from 'axios';
 import * as Yup from 'yup';
 
+import ToastManager from 'components/Toast/ToastManager';
+
 import IHttpClientError from 'services/httpClient/responses/default/IHttpClientError';
 
 export interface IValidationErrors {
@@ -13,32 +15,32 @@ function _httpClientError(err: AxiosError<IHttpClientError>): void {
   if (statusHttpCode === 400) {
     const message = err.response?.data.error.message;
 
-    // addToast({
-    //   title: message || 'Falha para realizar ação',
-    //   type: 'error',
-    //   duration: 3000,
-    // });
+    ToastManager.show({
+      title: message || 'Falha para realizar ação',
+      type: 'error',
+    });
     return;
   }
 
   if (statusHttpCode === 500) {
-    // addToast({
-    //   title: 'Servidor indisponível no momento',
-    //   type: 'error',
-    // });
+    ToastManager.show({
+      title: 'Servidor indisponível no momento',
+      type: 'error',
+    });
+    return;
   }
 
-  // addToast({
-  //   title: err.message,
-  //   type: 'error',
-  // });
+  ToastManager.show({
+    title: err.message,
+    type: 'error',
+  });
 }
 
 function _appError(message: string): void {
-  // addToast({
-  //   title: message,
-  //   type: 'error',
-  // });
+  ToastManager.show({
+    title: message,
+    type: 'error',
+  });
 }
 
 function errorHandling(err: AxiosError): void {
@@ -48,6 +50,14 @@ function errorHandling(err: AxiosError): void {
   }
 
   _appError(err.message);
+}
+
+function featureDev(): void {
+  ToastManager.show({
+    type: 'info',
+    title: 'Em desenvolvimento',
+    description: 'Esta seção está em desenvolvimento!',
+  });
 }
 
 function generateUniqueId(): number {
@@ -65,4 +75,9 @@ function getValidationErrors(err: Yup.ValidationError): IValidationErrors {
   return validationErrors;
 }
 
-export default { errorHandling, generateUniqueId, getValidationErrors };
+export default {
+  errorHandling,
+  featureDev,
+  generateUniqueId,
+  getValidationErrors,
+};
