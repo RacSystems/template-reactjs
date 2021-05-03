@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
 yarn
+
 yarn start
