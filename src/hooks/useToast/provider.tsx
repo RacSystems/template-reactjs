@@ -2,13 +2,12 @@ import { createContext, useCallback, useEffect, useState } from 'react';
 
 import { v4 as uuidV4 } from 'uuid';
 
-import Toast from 'components/Toast';
-import { IToastElementMessageProps } from 'components/Toast/ToastElement';
-import ToastManager from 'components/Toast/ToastManager';
+import Toast from 'components/utils/Toast';
+import { IToastElementMessageProps } from 'components/utils/Toast/ToastElement';
+import ToastManager from 'components/utils/Toast/ToastManager';
 
+import IShowToastDTO from './dtos/IShowToastDTO';
 import { IUseToastContext } from './index';
-
-export type IShowToastDTO = Omit<IToastElementMessageProps, 'id'>;
 
 export const ToastContext = createContext<IUseToastContext>(
   {} as IUseToastContext,

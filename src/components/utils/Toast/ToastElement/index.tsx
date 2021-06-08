@@ -4,7 +4,7 @@ import { FiAlertCircle, FiCheckCircle, FiInfo, FiX } from 'react-icons/fi';
 
 import useToast from 'hooks/useToast';
 
-import ComponentVisible from 'components/Visible';
+import ComponentIsVisible from 'components/utils/IsVisible';
 
 import { Close, Container, Description, Explain, Title } from './styles';
 
@@ -49,9 +49,9 @@ const ToastElement: React.FC<IToastElementProps> = ({ message, style }) => {
       <Description>
         <Title>{message.title}</Title>
 
-        <ComponentVisible when={!!message.description}>
+        <ComponentIsVisible when={!!message.description}>
           <Explain>{message.description}</Explain>
-        </ComponentVisible>
+        </ComponentIsVisible>
       </Description>
 
       <Close onClick={handleClose} type="button">

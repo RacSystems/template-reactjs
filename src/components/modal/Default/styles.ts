@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  overflow: hidden;
-  padding-right: 0.8rem;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
   position: fixed;
-  right: 0;
   top: 0;
-  z-index: 9999;
+  width: 100%;
 `;

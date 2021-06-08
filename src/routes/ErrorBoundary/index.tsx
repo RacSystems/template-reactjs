@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InternalError from 'routes/InternalError';
+import InternalError from './InternalError';
 
 interface IComponentErrorBoundaryProps {
   children: React.ReactNode;

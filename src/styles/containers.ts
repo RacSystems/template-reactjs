@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import colors from './colors';
 
-const Root = styled.div`
+export const Root = styled.div`
   display: grid;
   position: relative;
   width: 100%;
@@ -13,7 +13,7 @@ const Root = styled.div`
   }
 `;
 
-const Main = styled.main`
+export const Main = styled.main`
   display: flex;
   flex-flow: row wrap;
   min-height: 100vh;
@@ -26,7 +26,7 @@ const Main = styled.main`
   }
 `;
 
-const Global = styled.main`
+export const Global = styled.main`
   background-color: ${colors.mainBackground};
   min-height: calc(100vh - 7rem);
   overflow-x: auto;
@@ -37,9 +37,3 @@ const Global = styled.main`
     padding: 2rem 3rem;
   }
 `;
-
-export default {
-  Global,
-  Main,
-  Root,
-};

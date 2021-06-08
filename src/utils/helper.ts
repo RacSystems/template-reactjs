@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import * as Yup from 'yup';
 
-import ToastManager from 'components/Toast/ToastManager';
+import ToastManager from 'components/utils/Toast/ToastManager';
 
 import IHttpClientError from 'services/httpClient/responses/default/IHttpClientError';
 

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 
-import { IShowToastDTO, ToastContext } from './provider';
+import IShowToastDTO from './dtos/IShowToastDTO';
+import { ToastContext } from './provider';
 
 export interface IUseToastContext {
   hide(id: string): void;

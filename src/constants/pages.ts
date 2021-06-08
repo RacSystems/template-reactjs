@@ -1,5 +1,5 @@
 interface IPages {
-  [key: string]: string;
+  [key: string]: string | Record<string, string>;
 }
 
 const pages: IPages = {};

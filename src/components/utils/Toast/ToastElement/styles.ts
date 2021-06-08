@@ -4,35 +4,35 @@ import { animated } from 'react-spring';
 
 import colors from 'styles/colors';
 
-interface IContainerProps {
-  type?: 'success' | 'error' | 'info';
-}
-
 const toastTypeVariations = {
   info: css`
     background: ${colors.tertiary};
-    color: ${colors.secondaryText};
+    color: ${colors.white};
   `,
   success: css`
     background: ${colors.secondary};
-    color: ${colors.tertiary};
+    color: ${colors.white};
   `,
   error: css`
     background: ${colors.danger};
-    color: ${colors.tertiary};
+    color: ${colors.white};
   `,
 };
 
+interface IContainerProps {
+  type?: 'success' | 'error' | 'info';
+}
 export const Container = styled(animated.div)<IContainerProps>`
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  align-items: center;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
-  margin-right: 2.4rem;
-  margin-top: 0.8rem;
-  max-width: 36rem;
-  padding: 1.6rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  max-width: 25rem;
+  padding: 1rem;
   position: relative;
   width: 100%;
 
@@ -41,7 +41,7 @@ export const Container = styled(animated.div)<IContainerProps>`
 
 export const Description = styled.div`
   flex: 1;
-  margin-left: 0.8rem;
+  margin-left: 1rem;
   position: relative;
 `;
 
@@ -50,9 +50,8 @@ export const Title = styled.strong`
 `;
 
 export const Explain = styled.p`
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  margin-top: 0.4rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
   opacity: 0.8;
 `;
 
@@ -60,6 +59,6 @@ export const Close = styled.button`
   background: ${colors.transparent};
   border: 0;
   color: inherit;
-  margin-left: 0.8rem;
-  width: 3rem;
+  margin-left: 0.5rem;
+  width: 1.5rem;
 `;
