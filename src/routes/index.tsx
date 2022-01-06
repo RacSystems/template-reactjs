@@ -1,20 +1,19 @@
-import { Route, Routes as Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import HelloWorld from 'pages/HelloWorld';
 
 import NotFound from './NotFound';
-import RouteWrapper from './RouteWrapper';
+import PrivateRouteWrapper from './PrivateRouteWrapper';
 
-const Routes: React.FC = () => {
+const MainRoutes = (): JSX.Element => {
   return (
-    <Switch>
-      <Route element={HelloWorld} path="/">
-        {/* <RouteWrapper component={HelloWorld} index path="/" /> */}
-
-        <RouteWrapper component={NotFound} path="*" />
+    <Routes>
+      <Route element={<PrivateRouteWrapper />}>
+        <Route element={<HelloWorld />} path="/" />
       </Route>
-    </Switch>
+      <Route element={<NotFound />} path="*" />
+    </Routes>
   );
 };
 
-export default Routes;
+export default MainRoutes;
